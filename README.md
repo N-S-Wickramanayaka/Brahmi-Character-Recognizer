@@ -32,6 +32,17 @@ Place the following files in `src/assets/images/` (the filenames are required):
 
 Tiny placeholders exist so the project builds; replace them with the real photographs.
 
+The site title is the carved-stone image `title_stone_{800,1200,1664}.webp` in the same folder (three widths, so phones download the small one). To change it, export new WebP files at those widths with the same names.
+
+## Supported letters
+
+The letters shown above the upload field live in `src/components/SupportedLetters.tsx`. To add one:
+
+1. Put its sample image in `src/assets/letters/`, named after the label the model returns (e.g. `ja.webp`). WebP, PNG and JPEG all work; WebP keeps the page light.
+2. Add a line such as `{ name: 'ja', sinhala: 'ජ' }` to `SUPPORTED_LETTERS`, in alphabet order.
+
+The image is matched to the letter by file name, so nothing else needs importing.
+
 ## API configuration
 
 Edit `src/config.ts`:
